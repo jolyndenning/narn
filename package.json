@@ -9,13 +9,13 @@
     "narn": "bin/narn.js",
     "narnx": "bin/narnx.js"
   },
-  "repository": "git@github.com:joeldenning/narn.git",
-  "author": "Joel Denning <joeldenning@gmail.com>",
-  "homepage": "https://github.com/joeldenning/narn",
+  "repository": "git@github.com:jolyndenning/narn.git",
+  "author": "Jolyn Denning <jolyndenning@gmail.com>",
+  "homepage": "https://github.com/jolyndenning/narn",
   "license": "MIT",
   "scripts": {
     "test": "concurrently \"pnpm:test:*\"",
-    "test:jest": "jest --env=node",
+    "test:vitest": "vitest",
     "test:lockfile": "js-correct-lockfile pnpm",
     "format": "prettier . --write",
     "check-format": "prettier . --check",
@@ -33,7 +33,8 @@
     "jest-cli": "^29.7.0",
     "js-correct-lockfile": "^1.0.0",
     "prettier": "^3.5.3",
-    "pretty-quick": "^4.1.1"
+    "pretty-quick": "^4.1.1",
+    "vitest": "^3.1.2"
   },
   "dependencies": {
     "minimist": "^1.2.5",

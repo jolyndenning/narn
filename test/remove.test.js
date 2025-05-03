@@ -1,11 +1,10 @@
-const { getNpmArgs } = require("../lib/narn-lib");
+import { test, expect } from "vitest";
+import { getNpmArgs } from "../lib/narn-lib.js";
 
-describe("narn remove", () => {
-  it("removes packages", () => {
-    expect(getNpmArgs(["remove", "@angular/cli", "@angular/core"])).toEqual([
-      "uninstall",
-      "@angular/cli",
-      "@angular/core",
-    ]);
-  });
+test("removes packages", () => {
+  expect(getNpmArgs(["remove", "@angular/cli", "@angular/core"])).toEqual([
+    "uninstall",
+    "@angular/cli",
+    "@angular/core",
+  ]);
 });

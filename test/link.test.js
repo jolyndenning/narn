@@ -1,25 +1,24 @@
-const { getNpmArgs } = require("../lib/narn-lib");
+import { getNpmArgs } from "../lib/narn-lib.js";
+import { test, expect } from "vitest";
 
-describe("narn publish", () => {
-  it(`lets you link the current package`, () => {
-    expect(getNpmArgs(["link"])).toEqual(["link"]);
-  });
+test(`lets you link the current package`, () => {
+  expect(getNpmArgs(["link"])).toEqual(["link"]);
+});
 
-  it(`lets you link another package`, () => {
-    expect(getNpmArgs(["link", "package-name"])).toEqual([
-      "link",
-      "package-name",
-    ]);
-  });
+test(`lets you link another package`, () => {
+  expect(getNpmArgs(["link", "package-name"])).toEqual([
+    "link",
+    "package-name",
+  ]);
+});
 
-  it(`lets you unlink the current package`, () => {
-    expect(getNpmArgs(["unlink"])).toEqual(["unlink"]);
-  });
+test(`lets you unlink the current package`, () => {
+  expect(getNpmArgs(["unlink"])).toEqual(["unlink"]);
+});
 
-  it(`lets you unlink another package`, () => {
-    expect(getNpmArgs(["unlink", "package-name"])).toEqual([
-      "unlink",
-      "package-name",
-    ]);
-  });
+test(`lets you unlink another package`, () => {
+  expect(getNpmArgs(["unlink", "package-name"])).toEqual([
+    "unlink",
+    "package-name",
+  ]);
 });

@@ -1,7 +1,6 @@
-const { getNpmArgs } = require("../lib/narn-lib");
+import { getNpmArgs } from "../lib/narn-lib.js";
+import { test, expect } from "vitest";
 
-describe("narn init", () => {
-  it("can init with narn", () => {
-    expect(getNpmArgs(["init"])).toEqual(["init"]);
-  });
+test("can init with narn", () => {
+  expect(getNpmArgs(["init"])).toEqual(["init"]);
 });

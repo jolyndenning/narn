@@ -1,17 +1,16 @@
-const { getNpmArgs } = require("../lib/narn-lib");
+import { test, expect } from "vitest";
+import { getNpmArgs } from "../lib/narn-lib.js";
 
-describe("narn exec", () => {
-  it("can exec with narn", () => {
-    expect(getNpmArgs(["exec", "changeset", "init"])).toEqual([
-      "exec",
-      "changeset",
-      "init",
-    ]);
-  });
+test("can exec with narn", () => {
+  expect(getNpmArgs(["exec", "changeset", "init"])).toEqual([
+    "exec",
+    "changeset",
+    "init",
+  ]);
+});
 
-  it("forwards flags", () => {
-    expect(
-      getNpmArgs(["exec", "sequelize-cli", "seed", "--name", "demo-user"])
-    ).toEqual(["exec", "sequelize-cli", "seed", "--name", "demo-user"]);
-  });
+test("forwards flags", () => {
+  expect(
+    getNpmArgs(["exec", "sequelize-cli", "seed", "--name", "demo-user"]),
+  ).toEqual(["exec", "sequelize-cli", "seed", "--name", "demo-user"]);
 });

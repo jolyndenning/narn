@@ -1,7 +1,6 @@
-const { getNpmArgs } = require("../lib/narn-lib");
+import { getNpmArgs } from "../lib/narn-lib.js";
+import { test, expect } from "vitest";
 
-describe("narn info", () => {
-  it("can lookup package info", () => {
-    expect(getNpmArgs(["info", "single-spa"])).toEqual(["info", "single-spa"]);
-  });
+test("can lookup package info", () => {
+  expect(getNpmArgs(["info", "single-spa"])).toEqual(["info", "single-spa"]);
 });
