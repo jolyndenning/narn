@@ -1,6 +1,6 @@
 {
   "name": "narn",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "type": "module",
   "exports": {
     ".": "./lib/narn-lib.js"
