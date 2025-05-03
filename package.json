@@ -5,6 +5,7 @@
   "exports": {
     ".": "./lib/narn-lib.js"
   },
+  "packageManager": "pnpm@10.10.0",
   "bin": {
     "narn": "bin/narn.js",
     "narnx": "bin/narnx.js"
