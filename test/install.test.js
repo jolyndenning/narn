@@ -1,24 +1,21 @@
-const { getNpmArgs } = require("../lib/narn-lib");
+import { getNpmArgs } from "../lib/narn-lib.js";
+import { test, expect } from "vitest";
 
-describe("narn install", () => {
-  it("defaults to npm install if no args are provided", () => {
-    expect(getNpmArgs([])).toEqual(["install"]);
-  });
+test("defaults to npm install if no args are provided", () => {
+  expect(getNpmArgs([])).toEqual(["install"]);
+});
 
-  it("works when install is specified", () => {
-    expect(getNpmArgs(["install"])).toEqual(["install"]);
-  });
+test("works when install is specified", () => {
+  expect(getNpmArgs(["install"])).toEqual(["install"]);
+});
 
-  describe("--frozen-lockfile", () => {
-    it("works with npm", () => {
-      expect(getNpmArgs(["install", "--frozen-lockfile"])).toEqual(["ci"]);
-    });
+test("works wtesth npm", () => {
+  expect(getNpmArgs(["install", "--frozen-lockfile"])).toEqual(["ci"]);
+});
 
-    it("works with pnpm", () => {
-      expect(getNpmArgs(["install", "--frozen-lockfile"], true)).toEqual([
-        "install",
-        "--frozen-lockfile",
-      ]);
-    });
-  });
+test("works wtesth pnpm", () => {
+  expect(getNpmArgs(["install", "--frozen-lockfile"], true)).toEqual([
+    "install",
+    "--frozen-lockfile",
+  ]);
 });

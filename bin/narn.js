@@ -1,17 +1,17 @@
 #!/usr/bin/env node
-const { spawn } = require("child_process");
-const {
+import { spawn } from "node:child_process";
+import {
   detectYarn,
   detectNpm,
   detectPnpm,
   getYarnArgs,
   getNpmArgs,
-} = require("../lib/narn-lib.js");
-const fs = require("fs");
-const path = require("path");
+} from "../lib/narn-lib.js";
+import fs from "fs";
+import path from "path";
 
 const narnPackageJson = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "../package.json"))
+  fs.readFileSync(path.resolve(import.meta.dirname, "../package.json")),
 );
 
 async function runPackageManager() {

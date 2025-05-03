@@ -1,8 +1,7 @@
-const { getNpmArgs } = require("../lib/narn-lib");
+import { getNpmArgs } from "../lib/narn-lib.js";
+import { test, expect } from "vitest";
 
-// https://github.com/joeldenning/narn/issues/21
-describe("narn run", () => {
-  it("lists all available commands with npm run", () => {
-    expect(getNpmArgs(["run"])).toEqual(["run"]);
-  });
+// https://github.com/jolyndenning/narn/issues/21
+test("lists all available commands with npm run", () => {
+  expect(getNpmArgs(["run"])).toEqual(["run"]);
 });
